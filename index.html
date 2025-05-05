@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Hunter</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <div class="logo" id="logo" >
+        <img src="imagee/logo.png" alt="Book Hunter Logo">
+      <h1>Book Hunter</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="cart.html" id="cart"class="cart">Cart (0)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Genre Section -->
+    <section class="genres">
+      <h2>Browse by Genre</h2>
+      <div class="genre-list">
+        <button class="genre-btn" onclick="filterGenre('fiction')">Fiction</button>
+        <button class="genre-btn" onclick="filterGenre('self-help')">Self-Help</button>
+        <button class="genre-btn" onclick="filterGenre('tech books')">Tech</button>
+        <button class="genre-btn" onclick="filterGenre('sifi-books')">Sifi-Books</button>
+        
+        <!-- Add more genres here -->
+      </div>
+    </section>
+
+    <!-- Featured Books Section -->
+    <section class="featured-books">
+      <h2>Featured Books</h2>
+      <div class="book-list">
+        <div class="book-card" data-genre="fiction">
+          <a href="book-details.html?id=1" class="book-link">
+            <img src="image/fic_1.jpg" alt="Book 1">
+            <h3>To kill a mockinabird</h3>
+          </a>
+          <p class="author">Harper Lee</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="17">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="fiction">
+          <a href="book-details.html?id=2" class="book-link">
+            <img src="image/fic_2.jpg" alt="Book 2">
+            <h3>1984</h3>
+          </a>
+          <p class="author">George Orwell</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="2">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="fiction">
+          <a href="book-details.html?id=3" class="book-link">
+            <img src="image/fic_3.jpg" alt="Book 3">
+            <h3>Pride and Prejudice</h3>
+          </a>
+          <p class="author">George Orwell</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="2">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="fiction">
+          <a href="book-details.html?id=4" class="book-link">
+            <img src="image/fic_4.jpg" alt="Book 4">
+            <h3>The Great Catsby</h3>
+          </a>
+          <p class="author">George Orwell</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="2">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="fiction">
+          <a href="book-details.html?id=5" class="book-link">
+            <img src="image/fic_5.jpg" alt="Book 5">
+            <h3>One Hundred Years of Solitude</h3>
+          </a>
+          <p class="author">George Orwell</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="5">Add to Cart</button>
+        </div>
+
+        <!--self-books-->
+
+        <div class="book-card" data-genre="self-help">
+          <a href="book-details.html?id=6" class="book-link">
+            <img src="image/self_1.jpeg" alt="Book 6">
+            <h3>Atomic Habits</h3>
+          </a>
+          <p class="author">James Clear</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="6">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="self-help">
+          <a href="book-details.html?id=7" class="book-link">
+            <img src="image/self_2.jpeg" alt="Book 7">
+            <h3>The Power of Now</h3>
+          </a>
+          <p class="author">Eckhart Tolle</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="7">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="self-help">
+          <a href="book-details.html?id=8" class="book-link">
+            <img src="image/self_3.jpeg" alt="Book 8">
+            <h3>How to Win Friends</h3>
+          </a>
+          <p class="author">Dale Carnegie</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="8">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="self-help">
+          <a href="book-details.html?id=9" class="book-link">
+            <img src="image/self_4.jpeg" alt="Book 9">
+            <h3>Think & Grow Rich</h3>
+          </a>
+          <p class="author">Napoleon Hill</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="9">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="self-help">
+          <a href="book-details.html?id=10" class="book-link">
+            <img src="image/self_5.jpeg" alt="Book 10">
+            <h3>The 7 Habits of Highly Effective People</h3>
+          </a>
+          <p class="author">Stephen R. Covey</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="10">Add to Cart</button>
+        </div>
+        <!--tech-books-->
+
+        <div class="book-card" data-genre="tech books">
+          <a href="book-details.html?id=11" class="book-link">
+            <img src="image/tech_1.jpeg" alt="Book 11">
+            <h3>The Innovators</h3>
+          </a>
+          <p class="author">Walter Isaacson</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="11">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="tech books">
+          <a href="book-details.html?id=12" class="book-link">
+            <img src="image/tech_2.jpeg" alt="Book 12">
+            <h3>The Surveillance Capitalism</h3>
+          </a>
+          <p class="author">Shoshana Zuboff</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="12">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="tech books">
+          <a href="book-details.html?id=13" class="book-link">
+            <img src="image/tech_3.jpeg" alt="Book 13">
+            <h3>CODE</h3>
+          </a>
+          <p class="author">Charles Petzold</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="13">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="tech books">
+          <a href="book-details.html?id=14" class="book-link">
+            <img src="image/tech_4.jpeg" alt="Book 14">
+            <h3>The Second Machine Age</h3>
+          </a>
+          <p class="author">Erik Brynjolfsson and Andrew McAfee</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="14">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="tech books">
+          <a href="book-details.html?id=15" class="book-link">
+            <img src="image/tech_5.jpeg" alt="Book 15">
+            <h3>Hackers</h3>
+          </a>
+          <p class="author">Steven Levy</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="15">Add to Cart</button>
+        </div>
+
+        <!--sifi-books-->
+
+        <div class="book-card" data-genre="sifi-books">
+          <a href="book-details.html?id=16" class="book-link">
+            <img src="image/sifi_1.jpg" alt="Book 16">
+            <h3>DUNE</h3>
+          </a>
+          <p class="author">Steven Levy</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="16">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="sifi-books">
+          <a href="book-details.html?id=17" class="book-link">
+            <img src="image/sifi_2.jpg" alt="Book 17">
+            <h3>Neuromancer</h3>
+          </a>
+          <p class="author">Steven Levy</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="17">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="sifi-books">
+          <a href="book-details.html?id=18" class="book-link">
+            <img src="image/sifi_3.jpg" alt="Book 18">
+            <h3>The Left of Darkness</h3>
+          </a>
+          <p class="author">Steven Levy</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="18">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="sifi-books">
+          <a href="book-details.html?id=19" class="book-link">
+            <img src="image/sifi_4.jpg" alt="Book 19">
+            <h3>Foundation</h3>
+          </a>
+          <p class="author">Steven Levy</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="19">Add to Cart</button>
+        </div>
+        <div class="book-card" data-genre="sifi-books">
+          <a href="book-details.html?id=20" class="book-link">
+            <img src="image/sifi_5.jpg" alt="Book 20">
+            <h3>Hyperion</h3>
+          </a>
+          <p class="author">Steven Levy</p>
+          <p class="price">$10.99</p>
+          <button class="add-to-cart" data-id="20">Add to Cart</button>
+        </div>
+        <!-- Add more book cards here -->
+      </div>
+    </section>
+
+    <!-- Search Bar Section -->
+    <section class="search-bar">
+      <input type="text" id="search" placeholder="Search for a book..." oninput="searchBooks()" />
+      <button onclick="searchBooks()">Search</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Book Hunter. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

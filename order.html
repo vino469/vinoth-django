@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Book - Book Hunter</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .order-container {
+      max-width: 800px;
+      margin: auto;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #f9f9f9;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .cart-summary {
+      margin-top: 30px;
+      padding: 15px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .cart-summary ul {
+      list-style: none;
+      padding: 0;
+    }
+    .cart-summary li {
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .submit-btn {
+      margin-top: 20px;
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .confirmation {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #e8f5e9;
+      border: 1px solid #c8e6c9;
+      text-align: center;
+    }
+    .confirmation button {
+      margin: 10px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="order-container">
+    <h2>Place Your Order</h2>
+
+    <form id="order-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="form-group">
+        <label for="address">Shipping Address</label>
+        <textarea id="address" rows="3" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="payment">Payment Details</label>
+        <input type="text" id="payment" placeholder="Card/UPI/Other" required />
+      </div>
+      <div class="cart-summary">
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+      </div>
+      <button type="submit" class="submit-btn">Confirm Order</button>
+    </form>
+
+    <div class="confirmation" id="confirmation-box">
+      <h3>✅ Order Placed Successfully!</h3>
+      <p>Thank you for shopping with Book Hunter.</p>
+      <button onclick="window.location.href='index.html'">🏠 Go Home</button>
+      <button onclick="alert('Feature coming soon')">📋 View Order Summary</button>
+    </div>
+  </div>
+
+  <script>
+    // Get cart from localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartList = document.getElementById("cart-items");
+
+    if (cart.length === 0) {
+      cartList.innerHTML = "<li>No items in your cart.</li>";
+    } else {
+      cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.title} - ${item.price}`;
+        cartList.appendChild(li);
+      });
+    }
+
+    // Handle order form submission
+    document.getElementById("order-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("order-form").style.display = "none";
+      document.getElementById("confirmation-box").style.display = "block";
+      localStorage.removeItem('cart');
+    });
+  </script>
+</body>
+</html>

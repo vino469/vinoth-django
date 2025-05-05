@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Book Details - Book Hunter</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .book-detail-container {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      gap: 30px;
+    }
+    .book-detail-container img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .book-info {
+      flex: 1;
+    }
+    .book-info h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .book-info p {
+      margin: 10px 0;
+    }
+    .book-info .price {
+      font-size: 22px;
+      color: #e91e63;
+      font-weight: bold;
+    }
+    .rating {
+      font-size: 18px;
+      color: #ffc107;
+      margin: 10px 0;
+    }
+    .book-info button {
+      margin-right: 10px;
+      margin-top: 20px;
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .book-info button a {
+      color: white;
+      text-decoration: none;
+    }
+    .book-info button:hover {
+      background-color: #e65100;
+    }
+    .book-info button:hover {
+      background-color: #e65100;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <h1>Book Hunter</h1>
+        </div>
+        <div style="text-align: right; padding: 10px 20px;">
+          <a href="index.html" style="
+            background-color: #2196f3;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+          ">🏠 Home</a>
+        </div>
+      </header>
+
+  <div class="book-detail-container">
+    <img src="" alt="Book Image" id="book-img" />
+    <div class="book-info">
+      <h2 id="book-title"></h2>
+      <p><strong>Author:</strong> <span id="book-author"></span></p>
+      <p class="price" id="book-price"></p>
+      <p class="rating" id="book-rating"></p>
+      <p id="book-description"></p>
+      <button onclick="alert('Added to cart')">Add to Cart</button>
+      <button><a href = order.html>Buy Now </a></button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Book Hunter. All rights reserved.</p>
+  </footer>
+
+  <script src="book-details.js"></script>
+
+</body>
+</html>

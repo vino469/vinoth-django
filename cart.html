@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Book Hunter</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#" id="cart" class="cart">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Your Cart</h2>
+    <div id="cart-items">
+      <!-- Cart items will be dynamically added here -->
+    </div>
+    <div id="cart-actions">
+      <button id="order-button" class="order-btn">Order</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Book Hunter. All rights reserved.</p>
+  </footer>
+
+  <script src="cartt.js"></script>
+</body>
+</html>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f8f8;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo h1 {
+      margin: 0;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+    main {
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    #cart-items {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+        }
+
+    .cart-item:last-child {
+        border-bottom: none;
+        }
+
+    .cart-item img {
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+        }
+
+        #cart-actions {
+    margin-top: 20px;
+    text-align: right;
+  }
+
+  .order-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .order-btn:hover {
+    background-color: #45a049;
+  }
+
+  
+  .remove-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .remove-btn:hover {
+    background-color: #d32f2f;
+  }
